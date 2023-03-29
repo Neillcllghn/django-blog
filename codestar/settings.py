@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',  # added
     'django_summernote',  # added
+    'crispy_forms',  # added
     'blog',  # added
 ]
 
@@ -58,6 +59,8 @@ SITE_ID = 1  # ADDED AND IMPORTANT TO ALLOW DJANGO
 ACCOUNT_EMAIL_VERIFICATION = 'none'  # ADDED
 LOGIN_REDIRECT_URL = '/'  # ADDED
 LOGOUT_REDIRECT_URL = '/'  # ADDED
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
