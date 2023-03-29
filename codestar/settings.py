@@ -25,12 +25,12 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')  # added
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY') # added
+SECRET_KEY = os.environ.get('SECRET_KEY')  # added
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-blog-ci-project.herokuapp.com', 'localhost'] 
+ALLOWED_HOSTS = ['django-blog-ci-project.herokuapp.com', 'localhost']
 # added HEROKU APP NAME
 
 
@@ -42,12 +42,22 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',  # added
+    'allauth',  # added
+    'allauth.account',  # added
+    'allauth.socialaccount',  # added
     'cloudinary_storage',  # added
     'django.contrib.staticfiles',
     'cloudinary',  # added
     'django_summernote',  # added
     'blog',  # added
 ]
+
+SITE_ID = 1  # ADDED AND IMPORTANT TO ALLOW DJANGO
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # ADDED
+LOGIN_REDIRECT_URL = '/'  # ADDED
+LOGOUT_REDIRECT_URL = '/'  # ADDED
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
