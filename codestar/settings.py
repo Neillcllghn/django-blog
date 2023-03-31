@@ -29,7 +29,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')  # added
 SECRET_KEY = os.environ.get('SECRET_KEY')  # added
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['django-blog-ci-project.herokuapp.com', 'localhost']
 # added HEROKU APP NAME
