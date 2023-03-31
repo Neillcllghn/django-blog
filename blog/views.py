@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
 from django.views import generic, View  # this is to add generic library
 from django.http import HttpResponseRedirect
 from .models import Post  # this is to add Post class
@@ -23,6 +24,9 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
+
+        messages.add_message(request, messages.SUCCESS,
+                             'You have successfully left a comment')
 
         return render(
             request,
